@@ -1,15 +1,16 @@
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		int n = 10;
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
 		int h = 1;
-		int g = 1;
 		int i = 1;
-		int j = n*2;
+		int j = n;
 		int p = 1;
-		while (h < n*2 ) {
-			if (p < n*2) {
+		while (h < n ) {
+			if (p < n) {
 				if ((p >= i) && (p <= j)) {
 					System.out.print("*");
 					p++;
@@ -21,8 +22,8 @@ public class Main {
 				System.out.println();
 				h++;
 				p=1;
-				j=(n + Math.abs(h - n));
-				i=(n - Math.abs(n - h));
+				j=(n/2 + Math.abs(h - n/2));
+				i=(n/2 - Math.abs(n/2 - h));
 				
 			}
 
