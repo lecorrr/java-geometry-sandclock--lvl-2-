@@ -1,0 +1,33 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		int n = 10;
+		int h = 1;
+		int g = 1;
+		int i = 1;
+		int j = n*2;
+		int p = 1;
+		while (h < n*2 ) {
+			if (p < n*2) {
+				if ((p >= i) && (p <= j)) {
+					System.out.print("*");
+					p++;
+				} else {
+					p++;
+					System.out.print(" ");
+				}
+			}else {
+				System.out.println();
+				h++;
+				p=1;
+				j=(n + Math.abs(h - n));
+				i=(n - Math.abs(n - h));
+				
+			}
+
+		}
+
+	}
+
+}
