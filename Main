@@ -4,31 +4,63 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("input size of clock");
 		int n = sc.nextInt();
 		int h = 1;
-		int i = 1;
+		int i = 0;
 		int j = n;
 		int p = 1;
-		while (h < n ) {
-			if (p < n) {
-				if ((p >= i) && (p <= j)) {
-					System.out.print("*");
-					p++;
+		if (n % 2 != 0) {
+			while (h <= n) {
+				if (p <= n) {
+					if ((p >= i) && (p <= j)) {
+						System.out.print("*");
+						p++;
+					} else {
+						p++;
+						System.out.print(" ");
+					}
 				} else {
-					p++;
-					System.out.print(" ");
+					System.out.println();
+					h++;
+					p = 1;
+					j = ((n / 2 + 1) + Math.abs(h - (n / 2 + 1)));
+					i = ((n / 2 + 1) - Math.abs((n / 2 + 1) - h));
+
 				}
-			}else {
-				System.out.println();
-				h++;
-				p=1;
-				j=(n/2 + Math.abs(h - n/2));
-				i=(n/2 - Math.abs(n/2 - h));
-				
+
+			}
+		} else {
+			h = 0;
+
+			while (h <= n) {
+				if (h == n / 2 - 1) {
+					h++;
+					continue;
+				}
+				if (p <= n) {
+					if ((p > i) && (p <= j)) {
+						System.out.print("*");
+						p++;
+					} else {
+						p++;
+						System.out.print(" ");
+					}
+				} else {
+
+					System.out.println();
+					h++;
+
+					p = 1;
+					j = (n / 2 + Math.abs(h - (n / 2)));
+					i = (n / 2 - Math.abs(n / 2 - h));
+
+				}
+
 			}
 
 		}
-
 	}
 
 }
+
